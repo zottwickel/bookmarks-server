@@ -22,7 +22,7 @@ app.use(function validateBearerToken(req, res, next) {
 
   if (!authToken || authToken.split(' ')[1] !== apiToken) {
     // logger.error(`Unauthorized request to path: ${req.path}`)
-    return res.status(401).json({ error: `${process.env.API_TOKEN}` })
+    return res.status(401).json({ error: `Invalid API token` })
   }
   next()
 })
